@@ -1,0 +1,223 @@
+{
+  "Print to console": {
+    "scope": "javascript,typescript",
+    "prefix": "log",
+    "body": ["console.log('$1');", "$2"],
+    "description": "Log output to console"
+  },
+
+  "data": {
+    "prefix": "dt",
+    "scope": "php",
+    "body": ["\\$data['$CLIPBOARD'] = \\$$TM_SELECTED_TEXT;"],
+    "description": "Enviar variable data a la vista"
+  },
+
+  "var_dump": {
+    "prefix": "vd",
+    "scope": "php",
+    "body": [
+      "var_dump_dev(\\$${1:$CLIPBOARD},'${2:$CLIPBOARD}',${3|false, true|});"
+    ],
+    "description": "Var Dump"
+  },
+
+  "query": {
+    "prefix": "query",
+    "scope": "php",
+    "body": ["verQuery(\\$this->db);"],
+    "description": "ver query en un modal"
+  },
+
+  "getModel": {
+    "prefix": "getModel",
+    "scope": "php",
+    "body": ["\\$this->crs->$1"],
+    "description": "Get modelo "
+  },
+
+  "if": {
+    "prefix": "if",
+    "scope": "php",
+    "body": ["if($1){", "$2", "}"],
+    "description": "If"
+  },
+
+  "InsertComponent": {
+    "prefix": "comp",
+    "scope": "html",
+    "body": ["<${1/'//g}>", "$TM_SELECTED_TEXT", "</$1>"]
+  },
+
+  "ifhtml": {
+    "prefix": "if",
+    "scope": "html",
+    "body": ["<?php if ($1) { ?>", "$TM_SELECTED_TEXT", "<?php } ?>"]
+  },
+
+  "ediv": {
+    "prefix": "ediv",
+    "scope": "html",
+    "body": ["<div class='$1'>", "$TM_SELECTED_TEXT", "</div>"],
+    "description": "Div contenido"
+  },
+
+  "ife": {
+    "prefix": "ife",
+    "scope": "php",
+    "body": ["if($1){", "$2", "}else{", "$3", "}"],
+    "description": "if"
+  },
+
+  "echo": {
+    "prefix": "eco",
+    "scope": "php",
+    "body": ["echo('$1');"],
+    "description": "Echo"
+  },
+
+  "lang": {
+    "prefix": "lang",
+    "scope": "php",
+    "body": ["lang('About.$CLIPBOARD');"],
+    "description": "lang"
+  },
+
+  "existe": {
+    "prefix": "existe",
+    "scope": "php",
+    "body": ["isset($TM_SELECTED_TEXT)"],
+    "description": "Agrega un isset a la seleccion"
+  },
+
+  "langHTML": {
+    "prefix": "lang",
+    "scope": "html, javascript",
+    "body": ["<?= lang('About.$1'); ?>"],
+    "description": "lang"
+  },
+  "log": {
+    "prefix": "cl",
+    "scope": "javascript",
+    "body": ["console.log($1);"],
+    "description": "Console.log"
+  },
+
+  "br": {
+    "prefix": "br",
+    "scope": "php",
+    "body": ["echo('<br><br>');"],
+    "description": "br"
+  },
+
+  "alert": {
+    "prefix": "alert",
+    "scope": "php",
+    "body": ["echo('<script>alert('$1');</script>');"],
+    "description": "Alert Javascript"
+  },
+
+  "console": {
+    "prefix": "console",
+    "scope": "php",
+    "body": ["console_log('$1');"],
+    "description": "console.log Javascript"
+  },
+
+  "php": {
+    "prefix": "php",
+    "scope": "javascript,html",
+    "body": ["<?php ", "$1", "?>"],
+    "description": "Abrir php"
+  },
+
+  "about": {
+    "prefix": "about",
+    "scope": "php",
+    "body": ["'$1' => '$2',"],
+    "description": "Alert Javascript"
+  },
+
+  "echophp": {
+    "prefix": "ephp",
+    "scope": "javascript,html",
+    "body": ["<?= $TM_SELECTED_TEXT$1 ?>"],
+    "description": "Abrir php con echo"
+  },
+
+  "Insert div": {
+    "prefix": "div",
+    "scope": "html",
+    "body": ["<div>", "$1", "</div>", "$0"]
+  },
+
+  "For Loop": {
+    "prefix": "for",
+    "scope": "php",
+    "body": [
+      "for (let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
+      "\tconst ${3:element} = ${2:array}[${1:index}];",
+      "\t$0",
+      "}"
+    ]
+  },
+
+  "Insert task list": {
+    "prefix": "task",
+    "body": ["- [${1| ,x|}] ${2:text}", "${0}"]
+  },
+
+  "Insert block comment": {
+    "prefix": "comm",
+    "body": [
+      "${BLOCK_COMMENT_START}*",
+      "* --------------------------------------------------------------------------",
+      "* $1 Create by: Harold Perez ${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}",
+      "* --------------------------------------------------------------------------",
+      "* $2",
+      "* $3",
+      "* $4",
+      "* ${5|@param string, |}",
+      "${BLOCK_COMMENT_END}",
+      "${6|public, |} function ${7|FunctionName, |}(${8|Type,string,array, |} ${9|$var = null, |})",
+      "{",
+      "    ${10|# code|}",
+      "}"
+    ]
+  },
+
+  "setdata": {
+    "prefix": "sdt",
+    "scope": "php",
+    "body": ["\\$data['$TM_SELECTED_TEXT'] = ${1|$this->, $|}"],
+    "description": "Crear $data con una variable definida"
+  },
+
+  "nbsp": {
+    "prefix": "blank",
+    "scope": "html",
+    "body": ["&nbsp;"],
+    "description": "Insetar un espacio en blanco"
+  },
+
+  "redirect": {
+    "prefix": "redirect",
+    "scope": "php",
+    "body": ["return redirect()->to(base_url() . '/crs/controll_crs/$1');"],
+    "description": "Insetar un espacio en blanco"
+  },
+
+  "datesql": {
+    "prefix": "datesql",
+    "scope": "php",
+    "body": ["date('Y-m-d H:i:s')"],
+    "description": "Insetar una fecha con formato MySQL"
+  },
+
+  "cache": {
+    "prefix": "cache",
+    "scope": "php",
+    "body": ["?eraseCache=true"],
+    "description": "Eliminar cache mediante la url"
+  }
+}

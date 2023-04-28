@@ -176,7 +176,7 @@ class Auth extends ShieldAuth
      * --------------------------------------------------------------------
      * Determines whether users can register for the site.
      */
-    public bool $allowRegistration = true;
+    public bool $allowRegistration = false;
 
     /**
      * --------------------------------------------------------------------
@@ -267,7 +267,7 @@ class Auth extends ShieldAuth
      */
     public array $validFields = [
         'email',
-        // 'username',
+        'username',
     ];
 
     /**
@@ -284,7 +284,7 @@ class Auth extends ShieldAuth
      * For example:
      *     $personalFields = ['firstname', 'lastname'];
      */
-    public array $personalFields = [];
+    public array $personalFields = ['firstname', 'lastname', 'identification'];
 
     /**
      * --------------------------------------------------------------------
@@ -395,6 +395,7 @@ class Auth extends ShieldAuth
      */
     public function loginRedirect(): string
     {
+        // $url = auth()->user()->inGroup('admin') ? '/admin' : setting('Auth.redirects')['login'];
         $url = setting('Auth.redirects')['login'];
 
         return $this->getUrl($url);

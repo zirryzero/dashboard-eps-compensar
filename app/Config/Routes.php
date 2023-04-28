@@ -29,9 +29,19 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-// $routes->get('/login', 'Home::index');
+// $routes->get('/', 'Home::index');
+$routes->get('/', 'cml\Controll_cml::index');
+// $routes->get('report/($any)', 'cml\Controll_cml::index/$1');
+$routes->get('/report/(:any)', 'cml\Controll_cml::index/$1');
 
+/* Rutas Admin */
+$routes->post('admin/users/create', 'AdminController::storeUser');
+$routes->get('admin/users/create', 'AdminController::createUser');
+$routes->get('createUser', 'cml\Controll_cml::createUser');
+$routes->get('uploadExcel', 'cml\Controll_cml::uploadExcel');
+$routes->post('saveExcel', 'cml\Controll_cml::uploadExcel');
+
+/* Rutas Shield */
 service('auth')->routes($routes);
 
 /*
