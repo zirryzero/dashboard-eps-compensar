@@ -1,6 +1,75 @@
+# =============================================================================
+# ENVIRONMENT & SECRETS
+# =============================================================================
+.env
+.env.*
+!.env.example
+*.env
+env
+env copy
+env production
+
+# =============================================================================
+# COMPOSER & DEPENDENCIES
+# =============================================================================
 composer.phar
 /vendor/
 
-# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+# =============================================================================
+# COMPRESSED ARCHIVES & BACKUPS
+# =============================================================================
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.bak
+app.zip
+
+# =============================================================================
+# DATABASE FILES & QUERIES
+# =============================================================================
+*.sql
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# USER UPLOADS & EXCELS
+# =============================================================================
+/excels/*
+!/excels/.gitkeep
+
+# =============================================================================
+# WRITABLE DIRECTORY (CodeIgniter 4 runtime files)
+# =============================================================================
+/writable/*
+!/writable/.htaccess
+!/writable/index.html
+!/writable/cache/
+/writable/cache/*
+!/writable/cache/index.html
+!/writable/debugbar/
+/writable/debugbar/*
+!/writable/debugbar/.gitkeep
+!/writable/logs/
+/writable/logs/*
+!/writable/logs/index.html
+!/writable/session/
+/writable/session/*
+!/writable/session/index.html
+!/writable/uploads/
+/writable/uploads/*
+!/writable/uploads/index.html
+
+# =============================================================================
+# IDES, EDITORS & OS FILES
+# =============================================================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
