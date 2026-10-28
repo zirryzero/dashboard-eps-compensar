@@ -1,5 +1,7 @@
 # Dashboard EPS Compensar
 
+[🇪🇸 Español](README.md) | [🇺🇸 English](README.en.md)
+
 Sistema de reportería y panel administrativo para EPS Compensar, desarrollado sobre **CodeIgniter 4** con autenticación y gestión de usuarios mediante **CodeIgniter Shield**.
 
 ---
